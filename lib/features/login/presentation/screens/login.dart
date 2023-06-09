@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nano_health/core/assets/assets.dart';
+import 'package:nano_health/core/routing/routing.dart';
 import 'package:nano_health/features/login/presentation/screens/widgets/widgets.dart';
 
 class Login extends StatefulWidget {
@@ -60,7 +60,9 @@ class _LoginState extends State<Login> {
                     height: 20.h,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => RouteGenerator.pushReplacement(
+                      routeName: RouteGenerator.productRoute,
+                    ),
                     child: const Text('Continue'),
                   ),
                   SizedBox(

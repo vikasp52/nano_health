@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nano_health/core/assets/assets.dart';
 import 'package:nano_health/core/routing/routing.dart';
-import 'package:nano_health/features/login/presentation/screens/screen.dart';
+import 'package:nano_health/features/login/presentation/screens/login.dart';
+import 'features/product/presentation/screens/screen.dart';
 
 void main() {
   runApp(const MyApp());

@@ -15,6 +15,12 @@ class CustomTypography {
     fontWeight: FontWeight.w700,
   );
 
+  static final productPriceWhite = TextStyle(
+    color: CustomColors.white,
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w700,
+  );
+
   static final buttonTextWhite = TextStyle(
     color: CustomColors.white,
     fontSize: 17.sp,
@@ -24,6 +30,7 @@ class CustomTypography {
   static final contentNavyBlue = TextStyle(
     color: CustomColors.navyBlue,
     fontSize: 10.sp,
+    fontStyle: FontStyle.italic,
     fontWeight: FontWeight.w400,
   );
 
@@ -33,13 +40,14 @@ class CustomTypography {
     fontWeight: FontWeight.w400,
   );
 
-    static final contentDetails = TextStyle(
-    color: CustomColors.monsoon,
+  static final contentDetails = TextStyle(
+    color: CustomColors.cyanBlue,
     fontSize: 14.sp,
+    fontStyle: FontStyle.italic,
     fontWeight: FontWeight.w400,
   );
 
-    static final subTitle = TextStyle(
+  static final subTitle = TextStyle(
     color: CustomColors.cyanBlue,
     fontSize: 15.sp,
     fontWeight: FontWeight.w600,
