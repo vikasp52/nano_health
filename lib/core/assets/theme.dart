@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nano_health/core/assets/assets.dart';
 
 final lightTheme = ThemeData(
@@ -14,11 +15,11 @@ final lightTheme = ThemeData(
       color: CustomColors.white),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      backgroundColor: CustomColors.secondary,
+      backgroundColor: CustomColors.primary,
       textStyle: CustomTypography.buttonTextWhite,
-      minimumSize: const Size(double.infinity, 48),
+      minimumSize: Size(double.infinity, 70.h),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(30.w),
       ),
     ),
   ),

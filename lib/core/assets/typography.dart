@@ -27,7 +27,13 @@ class CustomTypography {
     fontWeight: FontWeight.w400,
   );
 
-  static final contentDetails = TextStyle(
+  static final textFieldLabel = TextStyle(
+    color: CustomColors.black,
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w400,
+  );
+
+    static final contentDetails = TextStyle(
     color: CustomColors.monsoon,
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
