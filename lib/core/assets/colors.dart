@@ -11,4 +11,5 @@ class CustomColors {
   static const yellow = Color(0xFFFFE072);
   static const cyanBlue = Color(0xFF444B51);
   static const grey = Color(0xFFF1F1F1);
+  static const error = Color(0xFFF06548);
 }

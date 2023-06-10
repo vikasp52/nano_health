@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nano_health/core/di/inection_container.dart';
+import 'package:nano_health/features/login/data/repository/login_repository.dart';
+import 'package:nano_health/features/login/presentation/cubit/login_cubit.dart';
 import 'package:nano_health/features/login/presentation/screens/screen.dart';
 import 'package:nano_health/features/product/presentation/screens/screen.dart';
 import 'package:nano_health/features/splash/splash.dart';
@@ -44,7 +48,12 @@ class RouteGenerator {
         break;
       case loginRoute:
         //final mealType = routeSettings.arguments as MealType;
-        screen = const Login();
+        screen =  BlocProvider(
+          create: (context) => LoginCubit(
+            serviceLocator<LoginRepository>(),
+          ),
+          child: const Login(),
+        );
         break;
       case productRoute:
         //final mealType = routeSettings.arguments as MealType;

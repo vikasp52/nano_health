@@ -10,41 +10,38 @@ class LogoTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      flex: 1,
-      child: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: <Color>[
-              CustomColors.secondary,
-              CustomColors.primary,
-            ],
-            tileMode: TileMode.mirror,
-          ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Expanded(
-              child: SvgPicture.asset(
-                CustomIcons.loginLogo,
-                fit: BoxFit.none,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                left: 30.w,
-                bottom: 20.h,
-              ),
-              child: Text(
-                'Log In',
-                style: CustomTypography.titleWhite,
-              ),
-            ),
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: <Color>[
+            CustomColors.secondary,
+            CustomColors.primary,
           ],
+          tileMode: TileMode.mirror,
         ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Expanded(
+            child: SvgPicture.asset(
+              CustomIcons.loginLogo,
+              fit: BoxFit.none,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 30.w,
+              bottom: 20.h,
+            ),
+            child: Text(
+              'Log In',
+              style: CustomTypography.titleWhite,
+            ),
+          ),
+        ],
       ),
     );
   }

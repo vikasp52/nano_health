@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nano_health/core/assets/assets.dart';
+import 'package:nano_health/core/di/inection_container.dart';
+import 'package:nano_health/core/network/network.dart';
 import 'package:nano_health/core/routing/routing.dart';
 import 'package:nano_health/features/login/presentation/screens/login.dart';
-import 'features/product/presentation/screens/screen.dart';
+import 'package:nano_health/features/splash/splash.dart';
 
 void main() {
+  setUp(NetworkConstants.baseUrl);
   runApp(const MyApp());
 }
 
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: RouteGenerator.generateRoute,
         debugShowCheckedModeBanner: false,
       ),
-      child: const ProductList(),
+      child: const SplashScreen(),
     );
   }
 }
