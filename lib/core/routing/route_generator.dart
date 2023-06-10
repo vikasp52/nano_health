@@ -4,6 +4,9 @@ import 'package:nano_health/core/di/inection_container.dart';
 import 'package:nano_health/features/login/data/repository/login_repository.dart';
 import 'package:nano_health/features/login/presentation/cubit/login_cubit.dart';
 import 'package:nano_health/features/login/presentation/screens/screen.dart';
+import 'package:nano_health/features/product/data/model/product.dart';
+import 'package:nano_health/features/product/data/repository/product_repository.dart';
+import 'package:nano_health/features/product/presentation/cubit/product_cubit.dart';
 import 'package:nano_health/features/product/presentation/screens/screen.dart';
 import 'package:nano_health/features/splash/splash.dart';
 
@@ -47,8 +50,7 @@ class RouteGenerator {
         screen = const SplashScreen();
         break;
       case loginRoute:
-        //final mealType = routeSettings.arguments as MealType;
-        screen =  BlocProvider(
+        screen = BlocProvider(
           create: (context) => LoginCubit(
             serviceLocator<LoginRepository>(),
           ),
@@ -56,11 +58,19 @@ class RouteGenerator {
         );
         break;
       case productRoute:
-        //final mealType = routeSettings.arguments as MealType;
-        screen = const ProductList();
+        screen = BlocProvider(
+          create: (context) => ProductCubit(
+            serviceLocator<ProductRepository>(),
+          ),
+          child: const ProductList(),
+        );
         break;
       case productDetailsRoute:
-        screen = const ProductDetails();
+        final product = routeSettings.arguments as Product;
+
+        screen = ProductDetails(
+          product: product,
+        );
         break;
       default:
         screen = const Scaffold(

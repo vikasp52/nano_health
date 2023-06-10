@@ -3,5 +3,5 @@ class NetworkConstants {
 
   static const String login = '/auth/login';
 
-  static const String productList = 'products';
+  static const String productList = '/products';
 }

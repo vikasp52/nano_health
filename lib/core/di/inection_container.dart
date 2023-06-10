@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:nano_health/core/network/network.dart';
 import 'package:nano_health/features/login/data/data_source/login_data_source.dart';
+import 'package:nano_health/features/product/data/data_source/product_data_source.dart';
+import 'package:nano_health/features/product/data/repository/product_repository.dart';
 
 import '../../features/login/data/repository/login_repository.dart';
 
@@ -12,6 +14,14 @@ Future<void> setUp(String baseUrl) async {
   serviceLocator.registerLazySingleton<LoginRepository>(
     () => LoginRepository(
       LoginDataSource(
+        serviceLocator<Dio>(),
+      ),
+    ),
+  );
+
+  serviceLocator.registerLazySingleton<ProductRepository>(
+    () => ProductRepository(
+      ProductDataSource(
         serviceLocator<Dio>(),
       ),
     ),

@@ -2,25 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nano_health/core/assets/assets.dart';
+import 'package:nano_health/features/product/data/model/model.dart';
 import 'package:nano_health/features/product/presentation/screens/widgets/widgets.dart';
 
 class ProductDetails extends StatelessWidget {
-  const ProductDetails({Key? key}) : super(key: key);
+  final Product product;
+  const ProductDetails({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
-    final screenWidth = MediaQuery.of(context).size.width;
     final imageHeight = screenHeight * 0.7;
 
     return Material(
       child: Stack(
         children: [
-          Image.asset(
-            CustomIcons.detailsImage,
+          Image.network(
+            product.image ?? '',
             height: imageHeight,
             width: double.infinity,
-            fit: BoxFit.cover,
+            fit: BoxFit.contain,
           ),
           Column(
             children: [
@@ -71,7 +75,7 @@ class ProductDetails extends StatelessWidget {
                           bottom: 5.h,
                         ),
                         child: Text(
-                          '0000 AED',
+                          '${product.price} AED',
                           style: CustomTypography.ratingTitle,
                         ),
                       ),
@@ -130,7 +134,7 @@ class ProductDetails extends StatelessWidget {
                               ),
                               ListTile(
                                 title: Text(
-                                  'description',
+                                  product.title ?? '',
                                   style: CustomTypography.contentDetailsTitle,
                                 ),
                                 subtitle: Padding(
@@ -138,7 +142,7 @@ class ProductDetails extends StatelessWidget {
                                     vertical: 10.h,
                                   ),
                                   child: Text(
-                                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+                                    product.description ?? '',
                                     style: CustomTypography.contentDetails,
                                   ),
                                 ),
@@ -162,7 +166,7 @@ class ProductDetails extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Review (100)',
+                                      'Review (${product.rating?.count.toString()})',
                                       style: CustomTypography.subTitle,
                                     ),
                                     SizedBox(
@@ -173,11 +177,11 @@ class ProductDetails extends StatelessWidget {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          '4.3',
+                                          product.rating?.rate.toString() ?? '',
                                           style: CustomTypography.ratingTitle,
                                         ),
                                         RatingBarIndicator(
-                                          rating: 3.5,
+                                          rating: product.rating?.rate ?? 0.0,
                                           itemBuilder: (context, index) =>
                                               const Icon(
                                             Icons.star,

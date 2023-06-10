@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
       () {
         RouteGenerator.pushReplacement(
-          routeName: RouteGenerator.loginRoute,
+          routeName: RouteGenerator.productRoute,
         );
       },
     );

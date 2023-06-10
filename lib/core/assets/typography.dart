@@ -16,7 +16,7 @@ class CustomTypography {
   );
 
   static final productPriceWhite = TextStyle(
-    color: CustomColors.white,
+    color: CustomColors.black,
     fontSize: 22.sp,
     fontWeight: FontWeight.w700,
   );
@@ -47,7 +47,7 @@ class CustomTypography {
     fontWeight: FontWeight.w400,
   );
 
-    static final contentDetailsTitle = TextStyle(
+  static final contentDetailsTitle = TextStyle(
     color: CustomColors.cyanBlue,
     fontSize: 12.sp,
     fontStyle: FontStyle.italic,
@@ -60,7 +60,7 @@ class CustomTypography {
     fontWeight: FontWeight.w600,
   );
 
-    static final ratingTitle = TextStyle(
+  static final ratingTitle = TextStyle(
     color: CustomColors.black,
     fontSize: 32.sp,
     fontWeight: FontWeight.w600,
