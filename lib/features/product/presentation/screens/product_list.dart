@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nano_health/core/assets/assets.dart';
 import 'package:nano_health/core/routing/routing.dart';
@@ -9,8 +10,8 @@ class ProductList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+    return Material(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const ProductTitle(),
@@ -57,9 +58,16 @@ class ProductList extends StatelessWidget {
                                   right: 10.w,
                                   bottom: 10.h,
                                 ),
-                                child: Text(
-                                  '00000 AED',
-                                  style: CustomTypography.productPriceWhite,
+                                child: RatingBarIndicator(
+                                  rating: 3.5,
+                                  itemBuilder: (context, index) => const Icon(
+                                    Icons.star,
+                                    color: CustomColors.yellow,
+                                  ),
+                                  unratedColor: CustomColors.whiteSmoke,
+                                  itemCount: 5,
+                                  itemSize: 30.w,
+                                  direction: Axis.horizontal,
                                 ),
                               ),
                             ),

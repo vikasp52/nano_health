@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: RouteGenerator.generateRoute,
         debugShowCheckedModeBanner: false,
       ),
-      child: const Login(),
+      child: const ProductList(),
     );
   }
 }

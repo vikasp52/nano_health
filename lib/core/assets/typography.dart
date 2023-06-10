@@ -47,9 +47,22 @@ class CustomTypography {
     fontWeight: FontWeight.w400,
   );
 
+    static final contentDetailsTitle = TextStyle(
+    color: CustomColors.cyanBlue,
+    fontSize: 12.sp,
+    fontStyle: FontStyle.italic,
+    fontWeight: FontWeight.w400,
+  );
+
   static final subTitle = TextStyle(
     color: CustomColors.cyanBlue,
     fontSize: 15.sp,
+    fontWeight: FontWeight.w600,
+  );
+
+    static final ratingTitle = TextStyle(
+    color: CustomColors.black,
+    fontSize: 32.sp,
     fontWeight: FontWeight.w600,
   );
 }
